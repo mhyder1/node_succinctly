@@ -1,0 +1,67 @@
+Event Driven
+
+Single threaded
+
+non blocking io
+
+Event loop
+	puts events in a queue until they are ready to be handled
+	call backs placed on event queue
+	code needs to be as fast as possible to free the engine so that other events can be served quickly
+
+setInterval executes a callback function every specified number of milliseconds.
+
+Node reads a script from top to bottom registering all call backs
+
+Node has access to global objects such as:
+	__dirname: current directory
+	__filename: name of script
+	console: print output
+	module: ref. to current module
+	require(): function used to import a module
+
+REPL: read-eval-print loop
+
+It’s an accepted pattern that the first parameter of a callback function is the possible error
+
+Event emitter has 2 main methods: emit & on
+	on used to subscribe to an event. it received and event name and a call back that is executed when event occurs
+
+setImmediate: adds (callback) function to queue behind others
+process.nextTick: adds function ahead of others on the queue
+
+module.exports is a global object that is exported to the caller using the require function.
+
+Everything defined inside a module is private and doesn’t pollute the global scope except what is assigned to module.exports
+
+fs Module
+	wrapper around standard POSIX functions
+	fs.readFile
+	fs.writeFile
+	fs.watch
+
+
+
+
+path Module
+	Exposes a set of functions that operate on file paths
+	path.join
+	path.join(__dirname, 'readme.md')
+	path.parse(/path/to/file.txt)
+
+Streams
+	are event emitters
+	Similar to Unix pipes
+	Can be readable, writable, duplex(both)
+	dont need to read all data before making it available
+	they emit events when a chunk of data is available
+	readable stream can be piped into a writable stream
+
+
+
+
+
+
+
+
+
